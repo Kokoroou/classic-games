@@ -2,8 +2,8 @@
 Game logic for the Tic Tac Toe game.
 """
 
-import pygame
 import constants
+import pygame
 
 
 def show_instructions(screen: pygame.Surface) -> None:
@@ -68,7 +68,9 @@ def game_loop(screen: pygame.Surface) -> None:
                     1,
                 )
                 if board[i][j] != "":
-                    text: pygame.Surface = font.render(board[i][j], True, constants.WHITE)
+                    text: pygame.Surface = font.render(
+                        board[i][j], True, constants.WHITE
+                    )
                     text_rect: pygame.Rect = text.get_rect(
                         center=(j * 200 + 100, i * 200 + 100)
                     )
@@ -130,7 +132,9 @@ def game_loop(screen: pygame.Surface) -> None:
             if winner == "Tie":
                 text: pygame.Surface = font.render("It's a Tie!", True, constants.WHITE)
             else:
-                text: pygame.Surface = font.render(f"{winner} wins!", True, constants.WHITE)
+                text: pygame.Surface = font.render(
+                    f"{winner} wins!", True, constants.WHITE
+                )
             text_rect: pygame.Rect = text.get_rect(
                 center=(constants.WIDTH // 2, constants.HEIGHT // 2)
             )

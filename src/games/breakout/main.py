@@ -1,14 +1,15 @@
 """
-Main file to run the Tic Tac Toe game.
+Main file to run the Breakout game.
 """
 
 import constants
 import pygame
-from game import game_loop, show_instructions
+from game import countdown, game_loop, show_instructions
 
 
 def run_game() -> None:
-    """Initializes and runs the Tic Tac Toe game.
+    """
+    Initializes and runs the Breakout game.
 
     :rtype: None
     """
@@ -16,8 +17,9 @@ def run_game() -> None:
     screen: pygame.Surface = pygame.display.set_mode(
         (constants.WIDTH, constants.HEIGHT)
     )
-    pygame.display.set_caption("Tic Tac Toe")
+    pygame.display.set_caption("Breakout")
     show_instructions(screen)
+    countdown(screen)
     game_loop(screen)
 
 

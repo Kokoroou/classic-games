@@ -1,6 +1,7 @@
-import pygame
 import constants
-from game import show_instructions, countdown, game_loop
+import pygame
+from game import countdown, game_loop, show_instructions
+
 
 def run_game() -> None:
     pygame.init()
@@ -9,6 +10,7 @@ def run_game() -> None:
     show_instructions(screen)
     countdown(screen)
     game_loop(screen)
+
 
 if __name__ == "__main__":
     run_game()

@@ -2,9 +2,10 @@
 Ball class for the Pong game.
 """
 
+import random
+
 import constants
 import pygame
-import random
 
 
 class Ball:

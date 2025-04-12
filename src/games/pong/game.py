@@ -76,7 +76,7 @@ def game_loop(screen: pygame.Surface) -> None:
     winning_score = 10  # Score needed to win
     running = True
     font = pygame.font.Font(None, 36)  # Initialize font outside the loop
-    winner = None # None, 1, or 2
+    winner = None  # None, 1, or 2
     while running:
         # Event handling
         if player1_score >= winning_score or player2_score >= winning_score:
@@ -86,7 +86,7 @@ def game_loop(screen: pygame.Surface) -> None:
             else:
                 winner = 2
             continue
-            
+
         # Event handling
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -155,7 +155,7 @@ def game_loop(screen: pygame.Surface) -> None:
 
         # Control frame rate
         pygame.time.Clock().tick(60)
-    
+
     if winner:
         screen.fill(constants.BLACK)
         font = pygame.font.Font(None, 72)
@@ -166,6 +166,3 @@ def game_loop(screen: pygame.Surface) -> None:
         pygame.time.delay(2000)
 
     pygame.quit()
-
-
-
