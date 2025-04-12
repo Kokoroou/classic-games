@@ -9,9 +9,11 @@
 - Đã tạo `projectbrief.md` và `productContext.md`.
 
 ## Các bước tiếp theo
-- Tạo `README.md` ở thư mục gốc.
-- Đọc và cập nhật `pyproject.toml`.
-- Tạo các file Memory Bank còn lại.
+- Cập nhật `README.md` ở thư mục gốc.
+- Cập nhật các file Memory Bank còn lại.
+- Sửa lỗi và cải tiến game Pong.
 
 ## Các quyết định và cân nhắc
 - Sử dụng Pygame cho dự án.
+- Chia nhỏ file `main.py` thành các module nhỏ hơn.
+- Sử dụng hình tròn cho bóng và bo góc cho thanh.

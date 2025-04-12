@@ -15,7 +15,7 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 4.  Chạy `poetry install` để cài đặt dependencies.
 
 ## Hướng dẫn chạy
-1.  Chạy `poetry run python src/games/[tên game]/main.py` để chạy một game cụ thể.
+1.  Chạy `poetry run python src/games/pong/main.py` để chơi game Pong.
 
 ## Cấu trúc dự án
 ```
@@ -25,6 +25,10 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 ├── src
 │   └── games
 │       ├── pong
+│   │   │   ├── constants.py
+│   │   │   ├── paddle.py
+│   │   │   ├── ball.py
+│   │   │   ├── game.py
 │   │   │   └── main.py
 │       ├── snake
 │   │   │   └── main.py
@@ -37,3 +41,7 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
     ├── systemPatterns.md
     ├── techContext.md
     └── progress.md
+```
+
+## Thông tin thêm
+-   Game Pong đã được cải tiến với trang hướng dẫn, đếm số trước khi bắt đầu, và sửa lỗi va chạm.
