@@ -120,7 +120,8 @@ def game_loop(screen: pygame.Surface) -> None:
             ball_instance = ball.Ball()
             ball_instance.start()
         else:
-            # Calculate the distance between the center of the ball and the center of the paddle
+            # Calculate the distance between the center of the ball
+            # and the center of the paddle
             # Collision with paddles
             if (
                 ball_instance.x + constants.BALL_RADIUS > player1.x

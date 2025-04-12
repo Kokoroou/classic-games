@@ -38,10 +38,6 @@ def show_instructions(screen: pygame.Surface) -> None:
     while waiting:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                if not bricks:
-                    show_result(screen, "You win!")
-                else:
-                    show_result(screen, "You lose!")
                 pygame.quit()
             if event.type == pygame.KEYDOWN:
                 waiting = False
@@ -128,7 +124,8 @@ def game_loop(screen: pygame.Surface) -> None:
             and ball_instance.y - ball_instance.radius
             < player_paddle.y + player_paddle.height
         ):
-            # Calculate the distance from the center of the paddle to the point of collision
+            # Calculate the distance from the center of the paddle to
+            # the point of collision
             collision_point = ball_instance.x - (
                 player_paddle.x + player_paddle.width // 2
             )

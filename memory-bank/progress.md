@@ -17,6 +17,16 @@
 -   Fixed bug: Ball only bounces vertically after hitting the paddle.
 -   The game Breakout is running.
 
+## Progress
+
+-   Created initial files: `constants.py`, `game.py`, `main.py`, `snake.py`, `food.py` in `src/games/snake/`.
+-   Implemented game logic in `src/games/snake/game.py`.
+-   Implemented show instruction in `src/games/snake/game.py`.
+-   Implemented countdown in `src/games/snake/game.py`.
+-   Implemented game over screen in `src/games/snake/game.py`.
+-   Fixed bug: Game loop does not end when snake collides with wall.
+-   The game Snake is running.
+
 ## Remaining
 
 -   Test the game and fix bugs.
