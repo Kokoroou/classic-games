@@ -16,10 +16,12 @@ def show_instructions(screen: pygame.Surface) -> None:
     font = pygame.font.Font(None, 36)
     instructions = [
         "Welcome to Pong!",
+        "",
         "Player 1: Use W and S to move up and down",
         "Player 2: Use UP and DOWN arrows to move up and down",
+        "",
         "First to 10 points wins!",
-        "Press any key to start",
+        "---Press any key to start---",
     ]
     y = constants.HEIGHT // 4
     for line in instructions:
@@ -161,15 +163,9 @@ def game_loop(screen: pygame.Surface) -> None:
         text_rect = text.get_rect(center=(constants.WIDTH // 2, constants.HEIGHT // 2))
         screen.blit(text, text_rect)
         pygame.display.flip()
-        pygame.time.delay(3000)
+        pygame.time.delay(2000)
 
     pygame.quit()
 
 
-def run_game() -> None:
-    pygame.init()
-    screen = pygame.display.set_mode((constants.WIDTH, constants.HEIGHT))
-    pygame.display.set_caption("Pong")
-    show_instructions(screen)
-    countdown(screen)
-    game_loop(screen)
+

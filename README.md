@@ -5,8 +5,7 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 
 ## Các game
 -   Pong
--   Snake
--   Tetris
+-   Tic-tac-toe
 
 ## Hướng dẫn cài đặt
 1.  Cài đặt Python 3.x.
@@ -16,32 +15,4 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 
 ## Hướng dẫn chạy
 1.  Chạy `poetry run python src/games/pong/main.py` để chơi game Pong.
-
-## Cấu trúc dự án
-```
-.
-├── README.md
-├── pyproject.toml
-├── src
-│   └── games
-│       ├── pong
-│   │   │   ├── constants.py
-│   │   │   ├── paddle.py
-│   │   │   ├── ball.py
-│   │   │   ├── game.py
-│   │   │   └── main.py
-│       ├── snake
-│   │   │   └── main.py
-│       └── tetris
-│   │   │   └── main.py
-└── memory-bank
-    ├── projectbrief.md
-    ├── productContext.md
-    ├── activeContext.md
-    ├── systemPatterns.md
-    ├── techContext.md
-    └── progress.md
-```
-
-## Thông tin thêm
--   Game Pong đã được cải tiến với trang hướng dẫn, đếm số trước khi bắt đầu, và sửa lỗi va chạm.
+2.  Chạy `poetry run python src/games/tictactoe/main.py` để chơi game Pong.
