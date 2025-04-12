@@ -1,0 +1,12 @@
+# Project Intelligence
+
+## Patterns
+-   Sử dụng cấu trúc thư mục chuẩn: `src/games/[tên game]/main.py`.
+-   Sử dụng docstring theo chuẩn reStructuredText.
+-   Sử dụng type annotation.
+
+## Preferences
+-   Sử dụng Pygame cho phát triển game.
+
+## Challenges
+-   Thiết kế game đơn giản và dễ hiểu.
