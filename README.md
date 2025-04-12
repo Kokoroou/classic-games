@@ -6,6 +6,7 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 ## Các game
 -   Pong
 -   Tic-tac-toe
+-   Breakout
 
 ## Hướng dẫn cài đặt
 1.  Cài đặt Python 3.x.
@@ -13,6 +14,22 @@ Dự án này là một proof-of-concept (POC) cho một số game cổ điển 
 3.  Clone repository.
 4.  Chạy `poetry install` để cài đặt dependencies.
 
-## Hướng dẫn chạy
-1.  Chạy `poetry run python src/games/pong/main.py` để chơi game Pong.
-2.  Chạy `poetry run python src/games/tictactoe/main.py` để chơi game Pong.
+## Hướng dẫn chơi
+
+1. Pong
+
+    ```powershell
+    poetry run python src/games/pong/main.py
+    ```
+
+2. Tic-tac-toe
+
+    ```powershell
+    poetry run python src/games/tictactoe/main.py
+    ```
+
+3. Breakout
+
+    ```powershell
+    poetry run python src/games/breakout/main.py
+    ```

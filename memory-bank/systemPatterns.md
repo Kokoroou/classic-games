@@ -19,9 +19,7 @@ Dự án sẽ tuân theo một cấu trúc đơn giản:
 
 ## Mối quan hệ giữa các component
 -   Mỗi game sẽ là một module độc lập trong thư mục `src/games`.
--   Các module của game Pong:
+-   Các module của game thường có:
     -   `constants.py`: Chứa các hằng số.
-    -   `paddle.py`: Chứa class `Paddle`.
-    -   `ball.py`: Chứa class `Ball`.
     -   `game.py`: Chứa logic chính của game.
     -   `main.py`: File chạy chính, import và gọi `run_game` từ `game.py`.
