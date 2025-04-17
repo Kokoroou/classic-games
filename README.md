@@ -10,39 +10,113 @@ This project is a proof-of-concept (POC) for several classic games written in Py
 - Snake  
 
 ## Installation Guide
-1. Install Python 3.x  
-2. Install Poetry  
-3. Clone the repository  
-4. Run `poetry install` to install dependencies  
+
+**Using Conda**
+
+1.  Install Conda: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
+2.  Clone the repository
+3.  Create a Conda environment from the `environment.yml` file:
+    ```bash
+    conda env create -f environment.yml
+    ```
+4.  Activate the Conda environment:
+    ```bash
+    conda activate classic-games
+    ```
+
+**Using Pip**
+
+1.  Install Python 3.x
+2.  Clone the repository
+3.  Create a virtual environment:
+    ```bash
+    python -m venv venv
+    ```
+4.  Activate the virtual environment:
+    *   On Windows:
+        ```bash
+        venv\Scripts\activate
+        ```
+    *   On macOS and Linux:
+        ```bash
+        source venv/bin/activate
+        ```
+5.  Install the dependencies from the `requirements.txt` file:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## How to Play
 
-1. Pong  
-    ```bash
-    poetry run python src/games/pong/main.py
-    ```
+**Using Conda**
 
-2. Tic-tac-toe  
+1.  Activate the Conda environment:
     ```bash
-    poetry run python src/games/tictactoe/main.py
+    conda activate classic-games
     ```
+2.  Run the games:
 
-3. Breakout  
-    ```bash
-    poetry run python src/games/breakout/main.py
-    ```
+    1.  Pong
+        ```bash
+        python ttanh_games/pong/main.py
+        ```
+    2.  Tic-tac-toe
+        ```bash
+        python ttanh_games/tictactoe/main.py
+        ```
+    3.  Breakout
+        ```bash
+        python ttanh_games/breakout/main.py
+        ```
+    4.  Snake
+        ```bash
+        python ttanh_games/snake/main.py
+        ```
 
-4. Snake  
+**Using Pip**
+
+1.  Activate the virtual environment:
+    *   On Windows:
+        ```bash
+        venv\Scripts\activate
+        ```
+    *   On macOS and Linux:
+        ```bash
+        source venv/bin/activate
+        ```
+2.  Run the games:
+
+    1.  Pong
+        ```bash
+        python ttanh_games/pong/main.py
+        ```
+    2.  Tic-tac-toe
+        ```bash
+        python ttanh_games/tictactoe/main.py
+        ```
+    3.  Breakout
+        ```bash
+        python ttanh_games/breakout/main.py
+        ```
+    4.  Snake
+        ```bash
+        python ttanh_games/snake/main.py
+        ```
+
+## How to Play with Game Launcher
+
+1.  Run the game launcher:
     ```bash
-    poetry run python src/games/snake/main.py
+    python main.py
     ```
+2.  Select a game from the menu.
 
 ## Code Formatting & Linting
 
 Before committing, ensure your code meets formatting and linting standards using:
 
 ```bash
-poetry run isort .
-poetry run black .
-poetry run flake8 --max-line-length=88 --extend-ignore=E203,W503 .
+isort .
+black .
+flake8 --max-line-length=88 --extend-ignore=E203,W503 .
 ```

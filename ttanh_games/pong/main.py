@@ -1,6 +1,6 @@
-import constants
+from ttanh_games.pong import constants
 import pygame
-from game import countdown, game_loop, show_instructions
+from ttanh_games.pong.game import countdown, game_loop, show_instructions
 
 
 def run_game() -> None:

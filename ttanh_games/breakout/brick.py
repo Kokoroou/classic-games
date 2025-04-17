@@ -2,7 +2,7 @@
 Brick for the Breakout game.
 """
 
-import constants
+from ttanh_games.breakout import constants
 import pygame
 
 

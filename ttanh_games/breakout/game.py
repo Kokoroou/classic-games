@@ -4,10 +4,7 @@ Game logic for the Breakout game.
 
 import math
 
-import ball
-import brick
-import constants
-import paddle
+from ttanh_games.breakout import ball, brick, constants, paddle
 import pygame
 
 

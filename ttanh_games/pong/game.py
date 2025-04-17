@@ -2,9 +2,7 @@
 Game logic for the Pong game.
 """
 
-import ball
-import constants
-import paddle
+from ttanh_games.pong import ball, constants, paddle
 import pygame
 
 

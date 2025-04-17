@@ -1,7 +1,7 @@
 import random
 
 import pygame
-from constants import (
+from ttanh_games.snake.constants import (
     GRID_SIZE,
     RED,
     SCREEN_HEIGHT,

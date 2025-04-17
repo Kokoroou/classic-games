@@ -1,13 +1,13 @@
 import pygame
-from constants import (
+from ttanh_games.snake.constants import (
     BLACK,
     SCREEN_HEIGHT,
     SCREEN_WIDTH,
     SNAKE_SPEED,
     WHITE,
 )
-from food import Food
-from snake import Snake
+from ttanh_games.snake.food import Food
+from ttanh_games.snake.snake import Snake
 
 
 class Game:

@@ -2,7 +2,7 @@
 Game logic for the Tic Tac Toe game.
 """
 
-import constants
+from ttanh_games.tictactoe import constants
 import pygame
 
 

@@ -1,7 +1,7 @@
 import sys
 
 import pygame
-from game import Game
+from ttanh_games.snake.game import Game
 
 
 def main() -> None:

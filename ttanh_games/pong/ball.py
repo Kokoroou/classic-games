@@ -4,7 +4,7 @@ Ball class for the Pong game.
 
 import random
 
-import constants
+from ttanh_games.pong import constants
 import pygame
 
 

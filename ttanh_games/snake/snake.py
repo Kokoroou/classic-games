@@ -1,5 +1,5 @@
 import pygame
-from constants import (
+from ttanh_games.snake.constants import (
     DOWN,
     GREEN,
     GRID_SIZE,
