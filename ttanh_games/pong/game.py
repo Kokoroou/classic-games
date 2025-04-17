@@ -162,5 +162,3 @@ def game_loop(screen: pygame.Surface) -> None:
         screen.blit(text, text_rect)
         pygame.display.flip()
         pygame.time.delay(2000)
-
-    pygame.quit()

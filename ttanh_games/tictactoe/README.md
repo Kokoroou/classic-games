@@ -5,17 +5,13 @@ Tic-tac-toe is a classic board game for two players, X and O. The players take t
 
 ## How to Play
 
-1.  Navigate to the game's directory:
+1.  Run the game:
     ```bash
-    cd ttanh_games/tictactoe/
+    python ttanh_games/tictactoe/main.py
     ```
-2.  Run the game:
-    ```bash
-    python main.py
-    ```
-3.  Players take turns entering the number of the square they want to mark (1-9).
-4.  The first player to get three in a row wins.
-5.  If all squares are filled and no one has three in a row, the game is a draw.
+2.  Players take turns entering the number of the square they want to mark (1-9).
+3.  The first player to get three in a row wins.
+4.  If all squares are filled and no one has three in a row, the game is a draw.
 
 ## Features
 

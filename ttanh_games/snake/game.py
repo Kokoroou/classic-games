@@ -37,7 +37,6 @@ class Game:
             self.clock.tick(SNAKE_SPEED)
 
         self.show_game_over_screen(self.screen)
-        pygame.quit()
 
     def update(self):
         self.snake.move()

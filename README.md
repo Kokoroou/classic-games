@@ -23,6 +23,10 @@ This project is a proof-of-concept (POC) for several classic games written in Py
     ```bash
     conda activate classic-games
     ```
+5. Install the main module:
+    ```bash
+    pip install -e .
+    ```
 
 **Using Pip**
 
@@ -44,6 +48,10 @@ This project is a proof-of-concept (POC) for several classic games written in Py
 5.  Install the dependencies from the `requirements.txt` file:
     ```bash
     pip install -r requirements.txt
+    ```
+6. Install the main module:
+    ```bash
+    pip install -e .
     ```
 
 ## How to Play with Game Launcher

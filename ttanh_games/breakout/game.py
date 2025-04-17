@@ -184,4 +184,3 @@ def game_loop(screen: pygame.Surface) -> None:
         show_result(screen, "You win!")
     else:
         show_result(screen, "You lose!")
-    pygame.quit()

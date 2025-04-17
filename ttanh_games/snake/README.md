@@ -5,17 +5,13 @@ Snake is a classic arcade game where the player controls a snake that moves arou
 
 ## How to Play
 
-1.  Navigate to the game's directory:
+1.  Run the game:
     ```bash
-    cd ttanh_games/snake/
+    python ttanh_games/snake/main.py
     ```
-2.  Run the game:
-    ```bash
-    python main.py
-    ```
-3.  Use the UP, DOWN, LEFT, and RIGHT arrow keys to control the snake's direction.
-4.  Eat food to grow longer.
-5.  Avoid colliding with the walls or the snake's own body.
+2.  Use the UP, DOWN, LEFT, and RIGHT arrow keys to control the snake's direction.
+3.  Eat food to grow longer.
+4.  Avoid colliding with the walls or the snake's own body.
 
 ## Features
 

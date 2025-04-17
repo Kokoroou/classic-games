@@ -3,6 +3,7 @@ Main module for the game launcher.
 """
 
 import sys
+import os
 
 import pygame
 
@@ -71,7 +72,9 @@ def main() -> None:
                     )
                     if text_rect.collidepoint(mouse_pos):
                         game_function()  # Run the selected game
-                        pygame.quit()
+                        # pygame.quit()
+                        main()
+                        return
 
         pygame.display.flip()
 
