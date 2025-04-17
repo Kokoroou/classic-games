@@ -16,9 +16,6 @@
 -   Reduced ball speed and made the ball fall straight down at the start.
 -   Fixed bug: Ball only bounces vertically after hitting the paddle.
 -   The game Breakout is running.
-
-## Progress
-
 -   Created initial files: `constants.py`, `game.py`, `main.py`, `snake.py`, `food.py` in `src/games/snake/`.
 -   Implemented game logic in `src/games/snake/game.py`.
 -   Implemented show instruction in `src/games/snake/game.py`.

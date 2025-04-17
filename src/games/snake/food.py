@@ -12,13 +12,16 @@ from constants import (
 class Food:
     def __init__(self):
         self.position = (0, 0)
-        self.randomize_position()
+        self.randomize_position([])
 
-    def randomize_position(self):
-        self.position = (
-            random.randint(0, (SCREEN_WIDTH // GRID_SIZE) - 1),
-            random.randint(0, (SCREEN_HEIGHT // GRID_SIZE) - 1),
-        )
+    def randomize_position(self, snake_body):
+        while True:
+            self.position = (
+                random.randint(0, (SCREEN_WIDTH // GRID_SIZE) - 1),
+                random.randint(0, (SCREEN_HEIGHT // GRID_SIZE) - 1),
+            )
+            if self.position not in snake_body:
+                break
 
     def draw(self, screen):
         pygame.draw.rect(

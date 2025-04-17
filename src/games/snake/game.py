@@ -46,7 +46,7 @@ class Game:
             and self.snake.body[0][1] == self.food.position[1]
         ):
             self.snake.grow()
-            self.food.randomize_position()
+            self.food.randomize_position(self.snake.body)
 
         if self.snake.check_collision():
             pygame.time.delay(2000)
