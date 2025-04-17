@@ -4,14 +4,16 @@ Game logic for the Pong game.
 
 import pygame
 
-from ttanh_games.pong import ball, constants, paddle
+from ttanh_games.constants import HEIGHT, WIDTH
+from ttanh_games.pong import ball, paddle
+from ttanh_games.pong.constants import BLACK, PADDLE_HEIGHT, PADDLE_WIDTH, WHITE
 
 
 def show_instructions(screen: pygame.Surface) -> None:
     """
     Shows the instructions screen.
     """
-    screen.fill(constants.BLACK)
+    screen.fill(BLACK)
     font = pygame.font.Font(None, 36)
     instructions = [
         "Welcome to Pong!",
@@ -22,10 +24,10 @@ def show_instructions(screen: pygame.Surface) -> None:
         "First to 10 points wins!",
         "---Press any key to start---",
     ]
-    y = constants.HEIGHT // 4
+    y = HEIGHT // 4
     for line in instructions:
-        text = font.render(line, True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, y))
+        text = font.render(line, True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, y))
         screen.blit(text, text_rect)
         y += 50
     pygame.display.flip()
@@ -45,10 +47,10 @@ def countdown(screen: pygame.Surface) -> None:
     Shows a countdown before the game starts.
     """
     for i in range(3, 0, -1):
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         font = pygame.font.Font(None, 72)
-        text = font.render(str(i), True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, constants.HEIGHT // 2))
+        text = font.render(str(i), True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
         screen.blit(text, text_rect)
         pygame.display.flip()
         pygame.time.delay(1000)
@@ -62,10 +64,10 @@ def game_loop(screen: pygame.Surface) -> None:
         screen (pygame.Surface): The game screen.
     """
     # Initialize paddles
-    player1 = paddle.Paddle(50, constants.HEIGHT // 2 - constants.PADDLE_HEIGHT // 2)
+    player1 = paddle.Paddle(50, HEIGHT // 2 - PADDLE_HEIGHT // 2)
     player2 = paddle.Paddle(
-        constants.WIDTH - 50 - constants.PADDLE_WIDTH,
-        constants.HEIGHT // 2 - constants.PADDLE_HEIGHT // 2,
+        WIDTH - 50 - PADDLE_WIDTH,
+        HEIGHT // 2 - PADDLE_HEIGHT // 2,
     )
 
     # Initialize ball
@@ -111,7 +113,7 @@ def game_loop(screen: pygame.Surface) -> None:
         ball_instance.move()
 
         # Collision with paddles
-        if ball_instance.x > constants.WIDTH or ball_instance.x < 0:
+        if ball_instance.x > WIDTH or ball_instance.x < 0:
             if ball_instance.x < 0:
                 player2_score += 1
             else:
@@ -123,31 +125,27 @@ def game_loop(screen: pygame.Surface) -> None:
             # and the center of the paddle
             # Collision with paddles
             if (
-                ball_instance.x + constants.BALL_RADIUS > player1.x
-                and ball_instance.x - constants.BALL_RADIUS
-                < player1.x + constants.PADDLE_WIDTH
-                and ball_instance.y + constants.BALL_RADIUS > player1.y
-                and ball_instance.y - constants.BALL_RADIUS
-                < player1.y + constants.PADDLE_HEIGHT
+                ball_instance.x + ball_instance.radius > player1.x
+                and ball_instance.x - ball_instance.radius < player1.x + PADDLE_WIDTH
+                and ball_instance.y + ball_instance.radius > player1.y
+                and ball_instance.y - ball_instance.radius < player1.y + PADDLE_HEIGHT
             ) or (
-                ball_instance.x + constants.BALL_RADIUS > player2.x
-                and ball_instance.x - constants.BALL_RADIUS
-                < player2.x + constants.PADDLE_WIDTH
-                and ball_instance.y + constants.BALL_RADIUS > player2.y
-                and ball_instance.y - constants.BALL_RADIUS
-                < player2.y + constants.PADDLE_HEIGHT
+                ball_instance.x + ball_instance.radius > player2.x
+                and ball_instance.x - ball_instance.radius < player2.x + PADDLE_WIDTH
+                and ball_instance.y + ball_instance.radius > player2.y
+                and ball_instance.y - ball_instance.radius < player2.y + PADDLE_HEIGHT
             ):
                 ball_instance.speed_x *= -1
 
         # Drawing
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         player1.draw(screen)
         player2.draw(screen)
         ball_instance.draw(screen)
 
         # Draw scores
-        text = font.render(f"{player1_score} - {player2_score}", True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, 30))
+        text = font.render(f"{player1_score} - {player2_score}", True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, 30))
         screen.blit(text, text_rect)
 
         # Update display
@@ -157,10 +155,10 @@ def game_loop(screen: pygame.Surface) -> None:
         pygame.time.Clock().tick(60)
 
     if winner:
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         font = pygame.font.Font(None, 72)
-        text = font.render(f"Player {winner} wins!", True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, constants.HEIGHT // 2))
+        text = font.render(f"Player {winner} wins!", True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
         screen.blit(text, text_rect)
         pygame.display.flip()
         pygame.time.delay(2000)

@@ -1,9 +1,8 @@
 import pygame
 
+from ttanh_games.constants import HEIGHT, WIDTH
 from ttanh_games.snake.constants import (
     BLACK,
-    SCREEN_HEIGHT,
-    SCREEN_WIDTH,
     SNAKE_SPEED,
     WHITE,
 )
@@ -14,7 +13,7 @@ from ttanh_games.snake.snake import Snake
 class Game:
     def __init__(self):
         pygame.init()
-        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption("Snake Game")
         self.clock = pygame.time.Clock()
         self.snake = Snake()
@@ -63,7 +62,7 @@ class Game:
         screen.fill(BLACK)
         font = pygame.font.Font(None, 72)
         text = font.render("Game Over!", True, WHITE)
-        text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
+        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
         screen.blit(text, text_rect)
         pygame.display.flip()
         pygame.time.delay(2000)
@@ -80,10 +79,10 @@ class Game:
             "Avoid hitting the wall or yourself",
             "---Press any key to start---",
         ]
-        y = SCREEN_HEIGHT // 4
+        y = HEIGHT // 4
         for line in instructions:
             text = font.render(line, True, WHITE)
-            text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, y))
+            text_rect = text.get_rect(center=(WIDTH // 2, y))
             screen.blit(text, text_rect)
             y += 50
         pygame.display.flip()
@@ -102,7 +101,7 @@ class Game:
             screen.fill(BLACK)
             font = pygame.font.Font(None, 72)
             text = font.render(str(i), True, WHITE)
-            text_rect = text.get_rect(center=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
+            text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
             screen.blit(text, text_rect)
             pygame.display.flip()
             pygame.time.delay(1000)

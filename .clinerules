@@ -4,6 +4,7 @@
 -   Sử dụng cấu trúc thư mục chuẩn: `src/games/[tên game]/main.py`.
 -   Sử dụng docstring theo chuẩn reStructuredText.
 -   Sử dụng type annotation.
+-   Import các hằng số `WIDTH` và `HEIGHT` từ `ttanh_games/constants.py` thay vì các file `constants.py` riêng của từng game.
 
 ## Preferences
 -   Sử dụng Pygame cho phát triển game.

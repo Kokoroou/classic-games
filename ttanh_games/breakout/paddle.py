@@ -4,7 +4,8 @@ Paddle for the Breakout game.
 
 import pygame
 
-from ttanh_games.breakout import constants
+from ttanh_games.breakout.constants import PADDLE_HEIGHT, PADDLE_WIDTH, WHITE
+from ttanh_games.constants import WIDTH
 
 
 class Paddle:
@@ -24,8 +25,8 @@ class Paddle:
         """
         self.x: int = x
         self.y: int = y
-        self.width: int = constants.PADDLE_WIDTH
-        self.height: int = constants.PADDLE_HEIGHT
+        self.width: int = PADDLE_WIDTH
+        self.height: int = PADDLE_HEIGHT
 
     def move(self, direction: int) -> None:
         """
@@ -38,8 +39,8 @@ class Paddle:
         self.x += direction * 5
         if self.x < 0:
             self.x = 0
-        if self.x > constants.WIDTH - self.width:
-            self.x = constants.WIDTH - self.width
+        if self.x > WIDTH - self.width:
+            self.x = WIDTH - self.width
 
     def draw(self, screen: pygame.Surface) -> None:
         """
@@ -49,6 +50,4 @@ class Paddle:
         :type screen: pygame.Surface
         :rtype: None
         """
-        pygame.draw.rect(
-            screen, constants.WHITE, (self.x, self.y, self.width, self.height)
-        )
+        pygame.draw.rect(screen, WHITE, (self.x, self.y, self.width, self.height))

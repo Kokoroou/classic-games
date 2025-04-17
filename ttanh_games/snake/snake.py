@@ -1,22 +1,19 @@
 import pygame
 
+from ttanh_games.constants import HEIGHT, WIDTH
 from ttanh_games.snake.constants import (
     DOWN,
     GREEN,
     GRID_SIZE,
     LEFT,
     RIGHT,
-    SCREEN_HEIGHT,
-    SCREEN_WIDTH,
     UP,
 )
 
 
 class Snake:
     def __init__(self):
-        self.body = [
-            ((SCREEN_WIDTH // GRID_SIZE) // 2, (SCREEN_HEIGHT // GRID_SIZE) // 2)
-        ]
+        self.body = [((WIDTH // GRID_SIZE) // 2, (HEIGHT // GRID_SIZE) // 2)]
         self.direction = RIGHT
         self.add_segment = False
 
@@ -40,9 +37,9 @@ class Snake:
         self.add_segment = True
 
     def check_collision(self):
-        if not 0 <= self.body[0][0] < (SCREEN_WIDTH // GRID_SIZE) or not 0 <= self.body[
-            0
-        ][1] < (SCREEN_HEIGHT // GRID_SIZE):
+        if not 0 <= self.body[0][0] < (WIDTH // GRID_SIZE) or not 0 <= self.body[0][
+            1
+        ] < (HEIGHT // GRID_SIZE):
             return True
 
         if self.body[0] in self.body[1:]:

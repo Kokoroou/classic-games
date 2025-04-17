@@ -4,7 +4,8 @@ Game logic for the Tic Tac Toe game.
 
 import pygame
 
-from ttanh_games.tictactoe import constants
+from ttanh_games.constants import HEIGHT, WIDTH
+from ttanh_games.tictactoe.constants import BLACK, WHITE
 
 
 def show_instructions(screen: pygame.Surface) -> None:
@@ -14,7 +15,7 @@ def show_instructions(screen: pygame.Surface) -> None:
     :type screen: pygame.Surface
     :rtype: None
     """
-    screen.fill(constants.BLACK)
+    screen.fill(BLACK)
     font = pygame.font.Font(None, 36)
     instructions: list[str] = [
         "Welcome to Tic Tac Toe!",
@@ -25,10 +26,10 @@ def show_instructions(screen: pygame.Surface) -> None:
         "First to get three in a row wins!",
         "---Press any key to start---",
     ]
-    y: int = constants.HEIGHT // 4
+    y: int = HEIGHT // 4
     for line in instructions:
-        text: pygame.Surface = font.render(line, True, constants.WHITE)
-        text_rect: pygame.Rect = text.get_rect(center=(constants.WIDTH // 2, y))
+        text: pygame.Surface = font.render(line, True, WHITE)
+        text_rect: pygame.Rect = text.get_rect(center=(WIDTH // 2, y))
         screen.blit(text, text_rect)
         y += 50
     pygame.display.flip()
@@ -64,14 +65,12 @@ def game_loop(screen: pygame.Surface) -> None:
             for j in range(3):
                 pygame.draw.rect(
                     screen,
-                    constants.WHITE,
+                    WHITE,
                     (j * 200, i * 200, 200, 200),
                     1,
                 )
                 if board[i][j] != "":
-                    text: pygame.Surface = font.render(
-                        board[i][j], True, constants.WHITE
-                    )
+                    text: pygame.Surface = font.render(board[i][j], True, WHITE)
                     text_rect: pygame.Rect = text.get_rect(
                         center=(j * 200 + 100, i * 200 + 100)
                     )
@@ -125,20 +124,16 @@ def game_loop(screen: pygame.Surface) -> None:
                     else:
                         player = "O" if player == "X" else "X"
 
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         draw_board()
 
         if game_over:
-            screen.fill(constants.BLACK)
+            screen.fill(BLACK)
             if winner == "Tie":
-                text: pygame.Surface = font.render("It's a Tie!", True, constants.WHITE)
+                text: pygame.Surface = font.render("It's a Tie!", True, WHITE)
             else:
-                text: pygame.Surface = font.render(
-                    f"{winner} wins!", True, constants.WHITE
-                )
-            text_rect: pygame.Rect = text.get_rect(
-                center=(constants.WIDTH // 2, constants.HEIGHT // 2)
-            )
+                text: pygame.Surface = font.render(f"{winner} wins!", True, WHITE)
+            text_rect: pygame.Rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
             screen.blit(text, text_rect)
             pygame.display.flip()
             pygame.time.delay(2000)

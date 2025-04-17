@@ -4,7 +4,7 @@ Brick for the Breakout game.
 
 import pygame
 
-from ttanh_games.breakout import constants
+from ttanh_games.breakout.constants import BRICK_HEIGHT, BRICK_WIDTH
 
 
 class Brick:
@@ -26,8 +26,8 @@ class Brick:
         """
         self.x: int = x
         self.y: int = y
-        self.width: int = constants.BRICK_WIDTH
-        self.height: int = constants.BRICK_HEIGHT
+        self.width: int = BRICK_WIDTH
+        self.height: int = BRICK_HEIGHT
         self.color: tuple[int, int, int] = color
 
     def draw(self, screen: pygame.Surface) -> None:

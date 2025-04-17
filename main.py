@@ -7,6 +7,7 @@ import sys
 import pygame
 
 from ttanh_games.breakout import main as breakout_main
+from ttanh_games.constants import HEIGHT, WIDTH
 from ttanh_games.pong import main as pong_main
 from ttanh_games.snake import main as snake_main
 from ttanh_games.tictactoe import main as tictactoe_main
@@ -19,9 +20,7 @@ def main() -> None:
     """
     pygame.init()
 
-    width: int = 800
-    height: int = 600
-    screen: pygame.Surface = pygame.display.set_mode((width, height))
+    screen: pygame.Surface = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Classic Games Launcher")
     font_instruction: pygame.font.Font = pygame.font.Font(None, 24)
     instruction_color: tuple[int, int, int] = (200, 200, 200)
@@ -30,7 +29,7 @@ def main() -> None:
         instruction_text, True, instruction_color
     )
     instruction_rect: pygame.Rect = instruction_surface.get_rect(
-        center=(width // 2, height - 50)
+        center=(WIDTH // 2, HEIGHT - 50)
     )
 
     font: pygame.font.Font = pygame.font.Font(None, 36)
@@ -45,12 +44,14 @@ def main() -> None:
     ]
 
     while True:
+        pygame.init()
+        font: pygame.font.Font = pygame.font.Font(None, 36)
         screen.fill(background_color)
 
         for i, (game_name, _) in enumerate(game_options):
             text_surface: pygame.Surface = font.render(game_name, True, text_color)
             text_rect: pygame.Rect = text_surface.get_rect(
-                center=(width // 2, height // 4 + i * 50)
+                center=(WIDTH // 2, HEIGHT // 4 + i * 50)
             )
             screen.blit(text_surface, text_rect)
         screen.blit(instruction_surface, instruction_rect)
@@ -66,10 +67,11 @@ def main() -> None:
                         game_name, True, text_color
                     )
                     text_rect: pygame.Rect = text_surface.get_rect(
-                        center=(width // 2, height // 4 + i * 50)
+                        center=(WIDTH // 2, HEIGHT // 4 + i * 50)
                     )
                     if text_rect.collidepoint(mouse_pos):
                         game_function()  # Run the selected game
+                        pygame.quit()
 
         pygame.display.flip()
 

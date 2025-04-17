@@ -6,14 +6,23 @@ import math
 
 import pygame
 
-from ttanh_games.breakout import ball, brick, constants, paddle
+from ttanh_games.breakout import ball, brick, paddle
+from ttanh_games.breakout.constants import (
+    BLACK,
+    BRICK_HEIGHT,
+    BRICK_WIDTH,
+    PADDLE_HEIGHT,
+    PADDLE_WIDTH,
+    WHITE,
+)
+from ttanh_games.constants import HEIGHT, WIDTH
 
 
 def show_instructions(screen: pygame.Surface) -> None:
     """
     Shows the instructions screen.
     """
-    screen.fill(constants.BLACK)
+    screen.fill(BLACK)
     font = pygame.font.Font(None, 36)
     instructions = [
         "Welcome to Breakout!",
@@ -24,10 +33,10 @@ def show_instructions(screen: pygame.Surface) -> None:
         "Don't let the ball hit the bottom!",
         "---Press any key to start---",
     ]
-    y = constants.HEIGHT // 4
+    y = HEIGHT // 4
     for line in instructions:
-        text = font.render(line, True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, y))
+        text = font.render(line, True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, y))
         screen.blit(text, text_rect)
         y += 50
     pygame.display.flip()
@@ -46,10 +55,10 @@ def countdown(screen: pygame.Surface) -> None:
     Shows a countdown before the game starts.
     """
     for i in range(3, 0, -1):
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         font = pygame.font.Font(None, 72)
-        text = font.render(str(i), True, constants.WHITE)
-        text_rect = text.get_rect(center=(constants.WIDTH // 2, constants.HEIGHT // 2))
+        text = font.render(str(i), True, WHITE)
+        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
         screen.blit(text, text_rect)
         pygame.display.flip()
         pygame.time.delay(1000)
@@ -59,10 +68,10 @@ def show_result(screen: pygame.Surface, result: str) -> None:
     """
     Shows the result screen.
     """
-    screen.fill(constants.BLACK)
+    screen.fill(BLACK)
     font = pygame.font.Font(None, 72)
-    text = font.render(result, True, constants.WHITE)
-    text_rect = text.get_rect(center=(constants.WIDTH // 2, constants.HEIGHT // 2))
+    text = font.render(result, True, WHITE)
+    text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     screen.blit(text, text_rect)
     pygame.display.flip()
     pygame.time.delay(2000)
@@ -77,8 +86,8 @@ def game_loop(screen: pygame.Surface) -> None:
     """
     # Initialize paddle
     player_paddle = paddle.Paddle(
-        constants.WIDTH // 2 - constants.PADDLE_WIDTH // 2,
-        constants.HEIGHT - constants.PADDLE_HEIGHT - 20,
+        WIDTH // 2 - PADDLE_WIDTH // 2,
+        HEIGHT - PADDLE_HEIGHT - 20,
     )
 
     # Initialize ball
@@ -90,8 +99,8 @@ def game_loop(screen: pygame.Surface) -> None:
     for i in range(5):
         for j in range(11):
             brick_instance = brick.Brick(
-                j * (constants.BRICK_WIDTH + 5) + 50,
-                i * (constants.BRICK_HEIGHT + 5) + 50,
+                j * (BRICK_WIDTH + 5) + 50,
+                i * (BRICK_HEIGHT + 5) + 50,
                 colors[i],
             )
             bricks.append(brick_instance)
@@ -152,14 +161,14 @@ def game_loop(screen: pygame.Surface) -> None:
                 break
 
         # Check if game is over
-        if ball_instance.y > constants.HEIGHT - ball_instance.radius:
+        if ball_instance.y > HEIGHT - ball_instance.radius:
             running = False
 
         if not bricks:
             running = False
 
         # Drawing
-        screen.fill(constants.BLACK)
+        screen.fill(BLACK)
         player_paddle.draw(screen)
         ball_instance.draw(screen)
         for brick_instance in bricks:

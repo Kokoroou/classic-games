@@ -4,7 +4,8 @@ Ball for the Breakout game.
 
 import pygame
 
-from ttanh_games.breakout import constants
+from ttanh_games.breakout.constants import BALL_RADIUS, WHITE
+from ttanh_games.constants import HEIGHT, WIDTH
 
 
 class Ball:
@@ -18,9 +19,9 @@ class Ball:
 
         :rtype: None
         """
-        self.x: int = constants.WIDTH // 2
-        self.y: int = constants.HEIGHT // 2
-        self.radius: int = constants.BALL_RADIUS
+        self.x: int = WIDTH // 2
+        self.y: int = HEIGHT // 2
+        self.radius: int = BALL_RADIUS
         self.speed_x: int = 0
         self.speed_y: int = int(5 * 0.8)
 
@@ -33,9 +34,9 @@ class Ball:
         self.x += self.speed_x
         self.y += self.speed_y
 
-        if self.x < self.radius or self.x > constants.WIDTH - self.radius:
+        if self.x < self.radius or self.x > WIDTH - self.radius:
             self.speed_x *= -1
-        if self.y < self.radius or self.y > constants.HEIGHT - self.radius:
+        if self.y < self.radius or self.y > HEIGHT - self.radius:
             self.speed_y *= -1
 
     def draw(self, screen: pygame.Surface) -> None:
@@ -46,4 +47,4 @@ class Ball:
         :type screen: pygame.Surface
         :rtype: None
         """
-        pygame.draw.circle(screen, constants.WHITE, (self.x, self.y), self.radius)
+        pygame.draw.circle(screen, WHITE, (self.x, self.y), self.radius)
