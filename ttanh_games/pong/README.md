@@ -7,11 +7,11 @@ Pong is a classic arcade game where two players control paddles to hit a ball ba
 
 1.  Navigate to the game's directory:
     ```bash
-    cd src/games/pong/
+    cd ttanh_games/pong/
     ```
 2.  Run the game:
     ```bash
-    poetry run python main.py
+    python main.py
     ```
 3.  Player 1 uses the W and S keys to move their paddle up and down.
 4.  Player 2 uses the UP and DOWN arrow keys to move their paddle up and down.

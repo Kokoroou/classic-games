@@ -3,7 +3,7 @@ Constants for the Tic Tac Toe game.
 """
 
 # Screen dimensions
-WIDTH: int = 600  #: The width of the screen.
+WIDTH: int = 800  #: The width of the screen.
 HEIGHT: int = 600  #: The height of the screen.
 
 # Colors

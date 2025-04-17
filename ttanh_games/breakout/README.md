@@ -7,11 +7,11 @@ Breakout is a classic arcade game where the player controls a paddle to bounce a
 
 1.  Navigate to the game's directory:
     ```bash
-    cd src/games/breakout/
+    cd ttanh_games/breakout/
     ```
 2.  Run the game:
     ```bash
-    poetry run python main.py
+    python main.py
     ```
 3.  Use the LEFT and RIGHT arrow keys to move the paddle.
 4.  Break all the bricks to win! Don't let the ball hit the bottom.

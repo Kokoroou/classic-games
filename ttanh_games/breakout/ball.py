@@ -2,8 +2,9 @@
 Ball for the Breakout game.
 """
 
-from ttanh_games.breakout import constants
 import pygame
+
+from ttanh_games.breakout import constants
 
 
 class Ball:

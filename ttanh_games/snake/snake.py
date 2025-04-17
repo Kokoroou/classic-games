@@ -1,4 +1,5 @@
 import pygame
+
 from ttanh_games.snake.constants import (
     DOWN,
     GREEN,

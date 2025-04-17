@@ -4,8 +4,9 @@ Game logic for the Breakout game.
 
 import math
 
-from ttanh_games.breakout import ball, brick, constants, paddle
 import pygame
+
+from ttanh_games.breakout import ball, brick, constants, paddle
 
 
 def show_instructions(screen: pygame.Surface) -> None:

@@ -1,4 +1,5 @@
 import pygame
+
 from ttanh_games.snake.constants import (
     BLACK,
     SCREEN_HEIGHT,

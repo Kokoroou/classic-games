@@ -2,8 +2,9 @@
 Game logic for the Tic Tac Toe game.
 """
 
-from ttanh_games.tictactoe import constants
 import pygame
+
+from ttanh_games.tictactoe import constants
 
 
 def show_instructions(screen: pygame.Surface) -> None:
@@ -145,4 +146,5 @@ def game_loop(screen: pygame.Surface) -> None:
 
         pygame.display.flip()
 
-    pygame.quit()
+    if __name__ == "__main__":
+        pygame.quit()

@@ -2,8 +2,9 @@
 Main module for the game launcher.
 """
 
-import pygame
 import sys
+
+import pygame
 
 from ttanh_games.breakout import main as breakout_main
 from ttanh_games.pong import main as pong_main
@@ -22,6 +23,15 @@ def main() -> None:
     height: int = 600
     screen: pygame.Surface = pygame.display.set_mode((width, height))
     pygame.display.set_caption("Classic Games Launcher")
+    font_instruction: pygame.font.Font = pygame.font.Font(None, 24)
+    instruction_color: tuple[int, int, int] = (200, 200, 200)
+    instruction_text: str = "Click on a game to play!"
+    instruction_surface: pygame.Surface = font_instruction.render(
+        instruction_text, True, instruction_color
+    )
+    instruction_rect: pygame.Rect = instruction_surface.get_rect(
+        center=(width // 2, height - 50)
+    )
 
     font: pygame.font.Font = pygame.font.Font(None, 36)
     text_color: tuple[int, int, int] = (255, 255, 255)
@@ -43,6 +53,7 @@ def main() -> None:
                 center=(width // 2, height // 4 + i * 50)
             )
             screen.blit(text_surface, text_rect)
+        screen.blit(instruction_surface, instruction_rect)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -51,7 +62,9 @@ def main() -> None:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouse_pos: tuple[int, int] = pygame.mouse.get_pos()
                 for i, (game_name, game_function) in enumerate(game_options):
-                    text_surface: pygame.Surface = font.render(game_name, True, text_color)
+                    text_surface: pygame.Surface = font.render(
+                        game_name, True, text_color
+                    )
                     text_rect: pygame.Rect = text_surface.get_rect(
                         center=(width // 2, height // 4 + i * 50)
                     )

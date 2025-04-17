@@ -2,8 +2,9 @@
 Game logic for the Pong game.
 """
 
-from ttanh_games.pong import ball, constants, paddle
 import pygame
+
+from ttanh_games.pong import ball, constants, paddle
 
 
 def show_instructions(screen: pygame.Surface) -> None:

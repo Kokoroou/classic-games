@@ -1,9 +1,11 @@
 """
 Main file to run the Breakout game.
 """
+import sys
+
+import pygame
 
 from . import constants
-import pygame
 from .game import countdown, game_loop, show_instructions
 
 
@@ -25,3 +27,5 @@ def run_game() -> None:
 
 if __name__ == "__main__":
     run_game()
+    pygame.quit()
+    sys.exit()

@@ -2,8 +2,9 @@
 Paddle class for the Pong game.
 """
 
-from ttanh_games.pong import constants
 import pygame
+
+from ttanh_games.pong import constants
 
 
 class Paddle:

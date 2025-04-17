@@ -2,8 +2,9 @@
 Main file to run the Tic Tac Toe game.
 """
 
-from ttanh_games.tictactoe import constants
 import pygame
+
+from ttanh_games.tictactoe import constants
 from ttanh_games.tictactoe.game import game_loop, show_instructions
 
 

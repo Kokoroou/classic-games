@@ -46,70 +46,17 @@ This project is a proof-of-concept (POC) for several classic games written in Py
     pip install -r requirements.txt
     ```
 
-## How to Play
-
-**Using Conda**
-
-1.  Activate the Conda environment:
-    ```bash
-    conda activate classic-games
-    ```
-2.  Run the games:
-
-    1.  Pong
-        ```bash
-        python ttanh_games/pong/main.py
-        ```
-    2.  Tic-tac-toe
-        ```bash
-        python ttanh_games/tictactoe/main.py
-        ```
-    3.  Breakout
-        ```bash
-        python ttanh_games/breakout/main.py
-        ```
-    4.  Snake
-        ```bash
-        python ttanh_games/snake/main.py
-        ```
-
-**Using Pip**
-
-1.  Activate the virtual environment:
-    *   On Windows:
-        ```bash
-        venv\Scripts\activate
-        ```
-    *   On macOS and Linux:
-        ```bash
-        source venv/bin/activate
-        ```
-2.  Run the games:
-
-    1.  Pong
-        ```bash
-        python ttanh_games/pong/main.py
-        ```
-    2.  Tic-tac-toe
-        ```bash
-        python ttanh_games/tictactoe/main.py
-        ```
-    3.  Breakout
-        ```bash
-        python ttanh_games/breakout/main.py
-        ```
-    4.  Snake
-        ```bash
-        python ttanh_games/snake/main.py
-        ```
-
 ## How to Play with Game Launcher
+
+After activate the virtual environment:
 
 1.  Run the game launcher:
     ```bash
     python main.py
     ```
 2.  Select a game from the menu.
+
+Read each game's README file to know how to run individual game.
 
 ## Code Formatting & Linting
 
