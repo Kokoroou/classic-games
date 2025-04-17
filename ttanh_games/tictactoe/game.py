@@ -56,7 +56,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                if event.type == pygame.KEYDOWN:
+                if event.type in [pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN]:
                     waiting = False
 
     def draw_board(self) -> None:
@@ -164,12 +164,10 @@ class Game:
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.running = False
+                    pygame.quit()
+                    exit()
                 self.handle_input(event)
 
             self.update()
             self.draw()
             self.clock.tick(60)
-
-    # if __name__ == "__main__":
-    #     pygame.quit()

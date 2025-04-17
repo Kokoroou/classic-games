@@ -25,7 +25,8 @@ class Game:
         while self.running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.running = False
+                    pygame.quit()
+                    exit()
                 self.snake.handle_input(event)
 
             self.update()
@@ -60,7 +61,8 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                if event.type == pygame.KEYDOWN:
+                    exit()
+                if event.type in [pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN]:
                     waiting = False
 
     def update(self):

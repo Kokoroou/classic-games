@@ -65,7 +65,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     exit()
-                if event.type == pygame.KEYDOWN:
+                if event.type in [pygame.KEYDOWN, pygame.MOUSEBUTTONDOWN]:
                     waiting = False
 
     def run(self) -> None:
@@ -89,7 +89,8 @@ class Game:
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.running = False
+                    pygame.quit()
+                    exit()
 
             # Player input
             keys = pygame.key.get_pressed()
