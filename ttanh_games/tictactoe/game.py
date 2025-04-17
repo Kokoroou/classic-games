@@ -55,6 +55,8 @@ def game_loop(screen: pygame.Surface) -> None:
     player: str = "X"  #: The current player.
     game_over: bool = False  #: Whether the game is over.
     font: pygame.font.Font = pygame.font.Font(None, 72)  #: The font to use.
+    offset_x: int = (WIDTH - 600) // 2
+    offset_y: int = (HEIGHT - 600) // 2
 
     def draw_board() -> None:
         """Draws the Tic Tac Toe board.
@@ -66,13 +68,13 @@ def game_loop(screen: pygame.Surface) -> None:
                 pygame.draw.rect(
                     screen,
                     WHITE,
-                    (j * 200, i * 200, 200, 200),
+                    (j * 200 + offset_x, i * 200 + offset_y, 200, 200),
                     1,
                 )
                 if board[i][j] != "":
                     text: pygame.Surface = font.render(board[i][j], True, WHITE)
                     text_rect: pygame.Rect = text.get_rect(
-                        center=(j * 200 + 100, i * 200 + 100)
+                        center=(j * 200 + offset_x + 100, i * 200 + offset_y + 100)
                     )
                     screen.blit(text, text_rect)
 
@@ -113,16 +115,17 @@ def game_loop(screen: pygame.Surface) -> None:
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
                 mouse_x: int = event.pos[0]
                 mouse_y: int = event.pos[1]
-                clicked_row: int = mouse_y // 200
-                clicked_col: int = mouse_x // 200
+                clicked_row: int = (mouse_y - offset_y) // 200
+                clicked_col: int = (mouse_x - offset_x) // 200
 
-                if board[clicked_row][clicked_col] == "":
-                    board[clicked_row][clicked_col] = player
-                    winner: str | None = check_winner()
-                    if winner:
-                        game_over = True
-                    else:
-                        player = "O" if player == "X" else "X"
+                if 0 <= clicked_row < 3 and 0 <= clicked_col < 3:
+                    if board[clicked_row][clicked_col] == "":
+                        board[clicked_row][clicked_col] = player
+                        winner: str | None = check_winner()
+                        if winner:
+                            game_over = True
+                        else:
+                            player = "O" if player == "X" else "X"
 
         screen.fill(BLACK)
         draw_board()
