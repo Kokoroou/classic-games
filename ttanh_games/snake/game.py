@@ -60,7 +60,6 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    exit()
                 if event.type == pygame.KEYDOWN:
                     waiting = False
 

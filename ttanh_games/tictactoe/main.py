@@ -1,23 +1,14 @@
-"""
-Main file to run the Tic Tac Toe game.
-"""
+"""Main file to run the Tic Tac Toe game."""
 
 import pygame
 
-from ttanh_games.constants import HEIGHT, WIDTH
-from ttanh_games.tictactoe.game import game_loop, show_instructions
+from ttanh_games.tictactoe.game import Game
 
 
 def run_game() -> None:
-    """Initializes and runs the Tic Tac Toe game.
-
-    :rtype: None
-    """
-    pygame.init()
-    screen: pygame.Surface = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Tic Tac Toe")
-    show_instructions(screen)
-    game_loop(screen)
+    """Initializes and runs the Tic Tac Toe game."""
+    game: Game = Game()
+    game.run()
 
 
 if __name__ == "__main__":

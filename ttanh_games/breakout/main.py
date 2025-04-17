@@ -2,11 +2,7 @@
 Main file to run the Breakout game.
 """
 
-import pygame
-
-from ttanh_games.breakout.game import game_loop, show_instructions
-from ttanh_games.commons import countdown
-from ttanh_games.constants import HEIGHT, WIDTH
+from ttanh_games.breakout.game import Game
 
 
 def run_game() -> None:
@@ -15,14 +11,9 @@ def run_game() -> None:
 
     :rtype: None
     """
-    pygame.init()
-    screen: pygame.Surface = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("Breakout")
-    show_instructions(screen)
-    countdown(screen)
-    game_loop(screen)
+    game: Game = Game()
+    game.run()
 
 
 if __name__ == "__main__":
     run_game()
-    pygame.quit()
