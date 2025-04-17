@@ -3,7 +3,6 @@ Main module for the game launcher.
 """
 
 import sys
-import os
 
 import pygame
 
@@ -40,7 +39,7 @@ def main() -> None:
     game_options: list[tuple[str, callable]] = [
         ("Breakout", breakout_main.run_game),
         ("Pong", pong_main.run_game),
-        ("Snake", snake_main.main),
+        ("Snake", snake_main.run_game),
         ("Tic Tac Toe", tictactoe_main.run_game),
     ]
 

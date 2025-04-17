@@ -4,8 +4,8 @@ Game logic for the Tic Tac Toe game.
 
 import pygame
 
-from ttanh_games.constants import HEIGHT, WIDTH
-from ttanh_games.tictactoe.constants import BLACK, WHITE
+from ttanh_games.commons import show_result
+from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
 
 
 def show_instructions(screen: pygame.Surface) -> None:
@@ -131,15 +131,10 @@ def game_loop(screen: pygame.Surface) -> None:
         draw_board()
 
         if game_over:
-            screen.fill(BLACK)
             if winner == "Tie":
-                text: pygame.Surface = font.render("It's a Tie!", True, WHITE)
+                show_result(screen=screen, result="It's a Tie!")
             else:
-                text: pygame.Surface = font.render(f"{winner} wins!", True, WHITE)
-            text_rect: pygame.Rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-            screen.blit(text, text_rect)
-            pygame.display.flip()
-            pygame.time.delay(2000)
+                show_result(screen=screen, result=f"{winner} wins!")
             running = False
 
         pygame.display.flip()

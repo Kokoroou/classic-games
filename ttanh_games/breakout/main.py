@@ -2,10 +2,10 @@
 Main file to run the Breakout game.
 """
 
-
 import pygame
 
-from ttanh_games.breakout.game import countdown, game_loop, show_instructions
+from ttanh_games.breakout.game import game_loop, show_instructions
+from ttanh_games.commons import countdown
 from ttanh_games.constants import HEIGHT, WIDTH
 
 

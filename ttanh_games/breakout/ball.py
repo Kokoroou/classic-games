@@ -4,8 +4,8 @@ Ball for the Breakout game.
 
 import pygame
 
-from ttanh_games.breakout.constants import BALL_RADIUS, WHITE
-from ttanh_games.constants import HEIGHT, WIDTH
+from ttanh_games.breakout.constants import BALL_RADIUS
+from ttanh_games.constants import HEIGHT, WHITE, WIDTH
 
 
 class Ball:

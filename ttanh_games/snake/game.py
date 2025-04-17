@@ -1,11 +1,8 @@
 import pygame
 
-from ttanh_games.constants import HEIGHT, WIDTH
-from ttanh_games.snake.constants import (
-    BLACK,
-    SNAKE_SPEED,
-    WHITE,
-)
+from ttanh_games.commons import countdown, show_result
+from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
+from ttanh_games.snake.constants import SNAKE_SPEED
 from ttanh_games.snake.food import Food
 from ttanh_games.snake.snake import Snake
 
@@ -22,8 +19,8 @@ class Game:
         self.running = True
 
     def run(self):
-        self.show_instructions(self.screen)
-        self.countdown(self.screen)
+        self.show_instructions()
+        countdown(self.screen)
 
         while self.running:
             for event in pygame.event.get():
@@ -36,7 +33,36 @@ class Game:
 
             self.clock.tick(SNAKE_SPEED)
 
-        self.show_game_over_screen(self.screen)
+        show_result(screen=self.screen, result="Game Over!")
+
+    def show_instructions(self):
+        self.screen.fill(BLACK)
+        font = pygame.font.Font(None, 36)
+        instructions = [
+            "Welcome to Snake Game!",
+            "",
+            "Use ARROW KEYS to move the snake",
+            "",
+            "Eat the red food to grow",
+            "Avoid hitting the wall or yourself",
+            "---Press any key to start---",
+        ]
+        y = HEIGHT // 4
+        for line in instructions:
+            text = font.render(line, True, WHITE)
+            text_rect = text.get_rect(center=(WIDTH // 2, y))
+            self.screen.blit(text, text_rect)
+            y += 50
+        pygame.display.flip()
+
+        waiting = True
+        while waiting:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    exit()
+                if event.type == pygame.KEYDOWN:
+                    waiting = False
 
     def update(self):
         self.snake.move()
@@ -56,51 +82,3 @@ class Game:
         self.snake.draw(self.screen)
         self.food.draw(self.screen)
         pygame.display.update()
-
-    def show_game_over_screen(self, screen):
-        screen.fill(BLACK)
-        font = pygame.font.Font(None, 72)
-        text = font.render("Game Over!", True, WHITE)
-        text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-        screen.blit(text, text_rect)
-        pygame.display.flip()
-        pygame.time.delay(2000)
-
-    def show_instructions(self, screen):
-        screen.fill(BLACK)
-        font = pygame.font.Font(None, 36)
-        instructions = [
-            "Welcome to Snake Game!",
-            "",
-            "Use ARROW KEYS to move the snake",
-            "",
-            "Eat the red food to grow",
-            "Avoid hitting the wall or yourself",
-            "---Press any key to start---",
-        ]
-        y = HEIGHT // 4
-        for line in instructions:
-            text = font.render(line, True, WHITE)
-            text_rect = text.get_rect(center=(WIDTH // 2, y))
-            screen.blit(text, text_rect)
-            y += 50
-        pygame.display.flip()
-
-        waiting = True
-        while waiting:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit()
-                    exit()
-                if event.type == pygame.KEYDOWN:
-                    waiting = False
-
-    def countdown(self, screen):
-        for i in range(3, 0, -1):
-            screen.fill(BLACK)
-            font = pygame.font.Font(None, 72)
-            text = font.render(str(i), True, WHITE)
-            text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2))
-            screen.blit(text, text_rect)
-            pygame.display.flip()
-            pygame.time.delay(1000)

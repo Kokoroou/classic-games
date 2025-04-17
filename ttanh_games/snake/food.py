@@ -2,11 +2,8 @@ import random
 
 import pygame
 
-from ttanh_games.constants import HEIGHT, WIDTH
-from ttanh_games.snake.constants import (
-    GRID_SIZE,
-    RED,
-)
+from ttanh_games.constants import HEIGHT, RED, WIDTH
+from ttanh_games.snake.constants import GRID_SIZE
 
 
 class Food:

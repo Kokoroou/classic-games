@@ -6,8 +6,8 @@ import random
 
 import pygame
 
-from ttanh_games.constants import HEIGHT, WIDTH
-from ttanh_games.pong.constants import BALL_RADIUS, BALL_SPEED_X, BALL_SPEED_Y, WHITE
+from ttanh_games.constants import HEIGHT, WHITE, WIDTH
+from ttanh_games.pong.constants import BALL_RADIUS, BALL_SPEED_X, BALL_SPEED_Y
 
 
 class Ball:
