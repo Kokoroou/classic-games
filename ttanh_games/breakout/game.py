@@ -5,7 +5,6 @@ Game logic for the Breakout game.
 import math
 
 import pygame
-
 from ttanh_games.breakout import ball, brick, paddle
 from ttanh_games.breakout.constants import (
     BRICK_HEIGHT,
@@ -13,9 +12,9 @@ from ttanh_games.breakout.constants import (
     PADDLE_HEIGHT,
     PADDLE_WIDTH,
 )
-from ttanh_games.commons import show_result
+from ttanh_games.commons import countdown, show_result
 from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
-from ttanh_games.commons import countdown
+
 
 class Game:
     """

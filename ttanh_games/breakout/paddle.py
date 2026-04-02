@@ -3,7 +3,6 @@ Paddle for the Breakout game.
 """
 
 import pygame
-
 from ttanh_games.breakout.constants import PADDLE_HEIGHT, PADDLE_WIDTH
 from ttanh_games.constants import WHITE, WIDTH
 

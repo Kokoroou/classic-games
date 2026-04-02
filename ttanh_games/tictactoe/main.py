@@ -1,7 +1,6 @@
 """Main file to run the Tic Tac Toe game."""
 
 import pygame
-
 from ttanh_games.tictactoe.game import Game
 
 

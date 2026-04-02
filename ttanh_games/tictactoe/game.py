@@ -1,7 +1,6 @@
 """Game logic for the Tic Tac Toe game."""
 
 import pygame
-
 from ttanh_games.commons import show_result
 from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
 

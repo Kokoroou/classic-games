@@ -3,7 +3,6 @@ Brick for the Breakout game.
 """
 
 import pygame
-
 from ttanh_games.breakout.constants import BRICK_HEIGHT, BRICK_WIDTH
 
 

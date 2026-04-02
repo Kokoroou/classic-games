@@ -1,5 +1,4 @@
 import pygame
-
 from ttanh_games.commons import countdown, show_result
 from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
 from ttanh_games.snake.constants import SNAKE_SPEED

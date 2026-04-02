@@ -5,7 +5,6 @@ Main module for the game launcher.
 import sys
 
 import pygame
-
 from ttanh_games.breakout import main as breakout_main
 from ttanh_games.constants import HEIGHT, WIDTH
 from ttanh_games.pong import main as pong_main

@@ -3,7 +3,6 @@ Paddle class for the Pong game.
 """
 
 import pygame
-
 from ttanh_games.constants import HEIGHT, WHITE
 from ttanh_games.pong.constants import PADDLE_HEIGHT, PADDLE_SPEED, PADDLE_WIDTH
 

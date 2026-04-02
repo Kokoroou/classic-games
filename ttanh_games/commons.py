@@ -1,5 +1,4 @@
 import pygame
-
 from ttanh_games.constants import BLACK, HEIGHT, WHITE, WIDTH
 
 
